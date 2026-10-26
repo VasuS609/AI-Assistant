@@ -1,0 +1,18 @@
+from openai import OpenAI
+
+client = openAI(
+    base_url="http://127.0.0.1.1143/v1",
+    api_key="dummy_key"
+)
+
+response = client.chat.completions.create(
+    model="qwen3:4b",
+    messages={
+        {
+            "role":"user",
+            "content":"Hello LLM!"
+        }
+    }
+)
+
+print(response)
